@@ -1,0 +1,35 @@
+/*++
+
+Copyright (c) Xelph. All Rights Reserved.
+
+Module Name:
+
+    Xelph_VMS.rc
+
+Abstract:
+
+    Version resource for Xelph_VMS.sys.
+
+Contact:
+
+    Discord: xelphh
+    Website: https://Xelph.lol
+
+--*/
+
+#include <windows.h>
+
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SOUND
+#define VER_FILEDESCRIPTION_STR     "Xelph Virtual Audio Driver"
+#define VER_INTERNALNAME_STR        "Xelph_VMS.sys"
+#define VER_ORIGINALFILENAME_STR    "Xelph_VMS.sys"
+
+#define VER_LEGALCOPYRIGHT_YEARS    "2026"
+#define VER_LEGALCOPYRIGHT_STR	    "Copyright (C) Xelph " VER_LEGALCOPYRIGHT_YEARS
+
+#include "common.ver"
+
+
