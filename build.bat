@@ -12,20 +12,6 @@ if %errorlevel% equ 0 (
     echo Found MSBuild in PATH
     goto msbuild_found
 )
-
-:: MSBuild not in PATH. Ask the Visual Studio installer (vswhere) where it is
-:: instead of guessing a fixed list of paths - VS folder names change with
-:: every release (e.g. "2022", or just a bare version number like "18" for
-:: newer previews), so a hardcoded list goes stale fast. vswhere itself lives
-:: at a stable, well-known path regardless of which VS version is installed.
-::
-:: NOTE: which VS instance actually has a *working* WDK pairing depends on
-:: wherever you installed the WDK's build tools/headers, not on VS version
-:: number - there is no reliable way to prefer "the right one" generically.
-:: If your WDK content ends up mismatched with the SDK version MSBuild
-:: auto-selects (a real thing that can happen with newer/preview WDK
-:: releases), see Directory.Build.targets at the repo root, which patches
-:: around exactly that.
 echo MSBuild not found in PATH, asking vswhere...
 
 set "VSWHERE=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer\vswhere.exe"
